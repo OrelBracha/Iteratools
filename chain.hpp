@@ -1,10 +1,12 @@
 #pragma once
 #import "range.hpp"
 
-namespace itertools{
+namespace itertools
+{
 	
 	template<typename T1, typename T2>
-	class chain{
+	class chain
+{
 
 	private:
 		T1 first;
@@ -21,13 +23,16 @@ namespace itertools{
 				typename T1::iterator it1Begin;
 				typename T1::iterator it1End;
 				typename T2::iterator it2Begin;
+                                typename T2::iterator it2End;
+
 
 			public: 
-				 iterator(typename T1::iterator iter1Begin, typename T1::iterator iter1End, typename T2::iterator iter2Begin):
+				 iterator(typename T1::iterator iter1Begin, typename T1::iterator iter1End, typename T2::iterator iter2Begin,typename T2::iterator iter2End ):
 					it1Begin(iter1Begin), it1End(iter1End),
-					it2Begin(iter2Begin) { }
 
-				auto operator*() const {
+					it2Begin(iter2Begin), it2End(iter2End) { }
+
+				/*auto operator*() const {
 					if (it1Begin != it1End)
 						return *it1Begin;
 					else return *it2Begin;
@@ -60,9 +65,27 @@ namespace itertools{
 					return true;
 				}
 
-		};
+		};*/
 		
-		typename chain<T1,T2>::iterator begin() {
+		auto begin()
+              {
+
+               return this->first.begin();
+               }
+               auto end()
+              {
+
+               return this->first.begin();
+              }
+
+
+
+
+
+
+
+
+            /*typename chain<T1,T2>::iterator begin() {
 			return chain<T1,T2>::iterator(first.begin(), first.end(), second.begin());
 		}
 			
@@ -70,6 +93,8 @@ namespace itertools{
 			return chain<T1,T2>::iterator(first.end(), first.end(), second.end());
 		}
 
-	};
+	};*/
 
+};
+};
 }
