@@ -13,7 +13,7 @@ namespace itertools
 		T2 second;
 		
 	public:
-		chain<T1,T2>(const T1 iter1, const T2 iter2)
+		chain<T1,T2>( T1 iter1,  T2 iter2)
 			: first(iter1),
 			second(iter2) {}
 
@@ -32,7 +32,7 @@ namespace itertools
 
 					it2Begin(iter2Begin), it2End(iter2End) { }
 
-				/*auto operator*() const {
+				auto operator*() const {
 					if (it1Begin != it1End)
 						return *it1Begin;
 					else return *it2Begin;
@@ -65,36 +65,20 @@ namespace itertools
 					return true;
 				}
 
-		};*/
-		
-		auto begin()
-              {
-
-               return this->first.begin();
-               }
-               auto end()
-              {
-
-               return this->first.begin();
-              }
+		};
 
 
 
 
-
-
-
-
-            /*typename chain<T1,T2>::iterator begin() {
-			return chain<T1,T2>::iterator(first.begin(), first.end(), second.begin());
+            typename chain<T1,T2>::  iterator begin() {
+			return chain<T1,T2>::iterator( first.begin(), first.end(), second.begin());
 		}
 			
-		typename chain<T1,T2>::iterator end() {
+		typename chain<T1,T2>::  iterator end() {
 			return chain<T1,T2>::iterator(first.end(), first.end(), second.end());
 		}
 
-	};*/
+	};
 
-};
-};
+
 }

@@ -9,7 +9,7 @@ namespace itertools{
 		public:
 			
  	powerset<T1>(const T1 t1): first(t1) {}
-        //powerset<T1,T2>(const T1 t1, const T2 t2) : first(t1) , second(t2) {}
+       // powerset<T1,T2>(const T1 t1, const T2 t2) : first(t1) , second(t2) {}
 			
 				class iterator {
 

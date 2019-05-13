@@ -121,9 +121,9 @@ public:
     return *this;
   }
 
-  template<typename TFUNC, typename TVAL> TestCase& check_equal(const TFUNC actual_func, const TVAL& expected_value, const string& context) {
+ template<typename TFUNC, typename TVAL> TestCase& check_equal(const TFUNC actual_func, const TVAL& expected_value, const string& context) {
     try {
-      TVAL actual_value = get_actual_value<TFUNC,TVAL>(actual_func, context);
+      TVAL actual_value = get_actual_value<TFUNC,TVAL>( actual_func,  context);
       if (incorrect(actual_value==expected_value))
         output << title(context) << "the result was " << actual_value << " but it should equal " << expected_value << "!" << endl;
     } catch(...) {}
