@@ -23,6 +23,14 @@ namespace itertools
 				typename T1::iterator it1Begin;
 				typename T1::iterator it1End;
 				typename T2::iterator it2Begin;
+<<<<<<< HEAD
+				typename T2::iterator it2End;
+
+			public: 
+				 iterator(typename T1::iterator iter1Begin, typename T1::iterator iter1End, typename T2::iterator iter2Begin, typename T2::iterator iter2End):
+					it1Begin(iter1Begin), it1End(iter1End),
+					it2Begin(iter2Begin),it2End(iter2End) { }
+=======
                                 typename T2::iterator it2End;
 
 
@@ -31,6 +39,7 @@ namespace itertools
 					it1Begin(iter1Begin), it1End(iter1End),
 
 					it2Begin(iter2Begin), it2End(iter2End) { }
+>>>>>>> 089af2e75adf8eced852c16e5785e4d70f39708a
 
 				auto operator*() const {
 					if (it1Begin != it1End)
@@ -47,9 +56,9 @@ namespace itertools
 				}
 
 				const iterator operator++(int){
-					iterator tmpIt(*this);
+					iterator It(*this);
 					operator++();
-					return tmpIt;
+					return It;
 				}
 
 				bool operator==(const iterator& other) const {
@@ -66,6 +75,15 @@ namespace itertools
 				}
 
 		};
+<<<<<<< HEAD
+		
+		typename chain<T1,T2>::iterator begin() {
+			return chain<T1,T2>::iterator(first.begin(), first.end(), second.begin(), second.end());
+		}
+			
+		typename chain<T1,T2>::iterator end() {
+			return chain<T1,T2>::iterator(first.end(), first.end(), second.end(), second.end());
+=======
 
 
 
@@ -76,9 +94,13 @@ namespace itertools
 			
 		typename chain<T1,T2>::  iterator end() {
 			return chain<T1,T2>::iterator(first.end(), first.end(), second.end());
+>>>>>>> 089af2e75adf8eced852c16e5785e4d70f39708a
 		}
 
 	};
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> 089af2e75adf8eced852c16e5785e4d70f39708a
 }

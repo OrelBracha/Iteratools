@@ -9,8 +9,19 @@
 using namespace std;
 using namespace itertools;
 
+
+template<typename Iterable>
+string iterable_to_string(const Iterable& iterable) {
+    ostringstream ostr;
+    for (decltype(*iterable.begin()) i: iterable)
+        ostr << i << ",";
+    return ostr.str();
+}
 int main() {
 
+<<<<<<< HEAD
+        
+=======
         template<typename Iterable>
         string iterable_to_string(const Iterable& iterable)
         {
@@ -19,6 +30,7 @@ int main() {
 
 
 
+>>>>>>> 089af2e75adf8eced852c16e5785e4d70f39708a
 
         badkan::TestCase testcase;
 	int grade=0;
@@ -36,6 +48,58 @@ else
 }
 		testcase.CHECK_OUTPUT(ostream.str(),"5,6,7,8") ; 
 		ostream.str("") ;
+<<<<<<< HEAD
+                for(auto i : range(6.6,7.6))
+                   ostream << i;
+
+                testcase.CHECK_OUTPUT(ostream.str(),"6.6");
+			ostream.str("") ;
+                for(auto i : range('a','d'))
+                   ostream << i;
+				   testcase.CHECK_OUTPUT(ostream.str(),"a,b,c");
+            ostream.str("") ;
+                for(auto i : range(':','?'))
+                   ostream << i;
+				   testcase.CHECK_OUTPUT(ostream.str(),":,;,<,=,>");
+	        ostream.str("") ;
+                for(auto i : range(1,5))
+                   ostream << i;
+				   testcase.CHECK_OUTPUT(ostream.str(),"1,2,3,4");
+             ostream.str("") ;
+                for(auto i : range(5.2,9.2))
+                   ostream << i;
+				   testcase.CHECK_OUTPUT(ostream.str(),"5.2,6.2,7.2,8.2");
+            ostream.str("") ;
+                for(auto i : range('c','d'))
+                   ostream << i;
+                   testcase.CHECK_OUTPUT(ostream.str(),"c");
+		
+
+		testcase.setname("chin-test");
+        
+		ostream.str("") ;
+	   	for(auto i : chain(range(1,4),range(5,9)))
+                   ostream << i;
+                   testcase.CHECK_OUTPUT(ostream.str(),"1,2,3,5,6,7,8");
+		ostream.str("") ;
+		
+	   	for(auto i : chain(range(-1.3,4.3),range(5,9)))
+                   ostream << i;
+                   testcase.CHECK_OUTPUT(ostream.str(),"-1.3,0.3,1.3,2.3,3.3,5,4,3,6,7,8");
+		ostream.str("") ;
+		
+		
+		testcase.setname("zip-test");
+		
+		for(auto i : zip(range(1,6),range(1,2)))
+                   ostream << i;
+                   testcase.CHECK_OUTPUT(ostream.str(),"1,1 2,1 3,1 4,1 5,1");
+		ostream.str("") ;
+		
+		
+		
+	
+=======
                 for(double i : range(6.6,7.6))
                    ostream << i;
 
@@ -151,6 +215,7 @@ else
 		.CHECK_EQUAL(powerset(chain(range(1,3),range('S','U'))),"{},{1},{2},{1,2},{S},{1,S},{2,S},{T},{1,T},{2,T},{S,T},{1,2,S},{1,2,T},{1,S,T},{2,S,T},{1,2,S,T}")
 		.CHECK_EQUAL(powerset(string("opq")),"{},{o},{p},{o,p},{q},{o,q},{p,q},{o,p,q}")
 		.CHECK_EQUAL(powerset(chain(range(1,3),range('S','U'))),"{},{1},{2},{1,2},{S},{1,S},{2,S},{T},{1,T},{2,T},{S,T},{1,2,S},{1,2,T},{1,S,T},{2,S,T},{1,2,S,T}");*/
+>>>>>>> 089af2e75adf8eced852c16e5785e4d70f39708a
 		grade = testcase.grade();
 	} else {
 		testcase.print_signal(signal);
